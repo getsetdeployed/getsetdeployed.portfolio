@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
   // Whitelist paths that can always be accessed
-  const whitelistedPaths = ["/maintenance"];
+  const whitelistedPaths = ["/maintenance", "/dashboard"];
 
   // If maintenance mode is off, proceed normally
   if (!isMaintenanceMode) {
