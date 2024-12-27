@@ -1,31 +1,62 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ReactNode } from "react";
+import { Inter } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const syne = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "block",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "GetSetDeploy",
-  description: "Work With Us",
+  metadataBase: new URL("https://getsetdeploy.com/"),
+  title: "Portfolio template - Eldora UI",
+  description:
+    "Eldora UI is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
+  generator: "Next.js",
+  applicationName: "Portfolio template",
+  keywords: [
+    "Portfolio Webdeveloper",
+    "React",
+    "developer",
+    "frontend",
+    "nextjs",
+    "react",
+    "frontend developer",
+    "frontend engineer",
+    "creative",
+    "creative developer",
+    "creative engineer",
+    "tech",
+    "software",
+    "software developer",
+    "portfolio",
+    "frontend developer portfolio",
+    "software developer portfolio",
+    "frontend engineer portfolio",
+  ],
+  colorScheme: "dark",
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio template - Eldora UI",
+    description:
+      "Portfolio template - Eldora UI is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
+    creator: "@bewithsnehasish",
+    creatorId: "0000000000",
+  },
+  category: "technology",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${syne.className} scroll-smooth scrollbar-none scrollbar-track-[#0E1016] scrollbar-thumb-[#212531]`}
       >
         {children}
       </body>
