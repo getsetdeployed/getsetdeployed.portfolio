@@ -1,6 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ReactNode } from "react";
 
-const Container = ({
+interface ContainerProps {
+  children: ReactNode;
+  width: string;
+  height: string;
+  color?: string;
+  borderRadius?: string;
+  blur?: boolean;
+}
+
+const Container: React.FC<ContainerProps> = ({
   children,
   width,
   height,
@@ -11,13 +20,15 @@ const Container = ({
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      const rect = containerRef.current.getBoundingClientRect();
-      setCursorX(e.clientX - rect.left);
-      setCursorY(e.clientY - rect.top);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setCursorX(e.clientX - rect.left);
+        setCursorY(e.clientY - rect.top);
+      }
     };
 
     const handleMouseEnter = () => {
@@ -28,14 +39,19 @@ const Container = ({
       setIsHovered(false);
     };
 
-    containerRef.current.addEventListener("mousemove", handleMouseMove);
-    containerRef.current.addEventListener("mouseenter", handleMouseEnter);
-    containerRef.current.addEventListener("mouseleave", handleMouseLeave);
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      currentRef.addEventListener("mousemove", handleMouseMove);
+      currentRef.addEventListener("mouseenter", handleMouseEnter);
+      currentRef.addEventListener("mouseleave", handleMouseLeave);
+    }
 
     return () => {
-      containerRef.current.removeEventListener("mousemove", handleMouseMove);
-      containerRef.current.removeEventListener("mouseenter", handleMouseEnter);
-      containerRef.current.removeEventListener("mouseleave", handleMouseLeave);
+      if (currentRef) {
+        currentRef.removeEventListener("mousemove", handleMouseMove);
+        currentRef.removeEventListener("mouseenter", handleMouseEnter);
+        currentRef.removeEventListener("mouseleave", handleMouseLeave);
+      }
     };
   }, []);
 
