@@ -27,7 +27,7 @@ const FloatingDock: React.FC<FloatingDockProps> = ({ items, className }) => {
   return (
     <Container
       width="auto"
-      height="100px"
+      height="80px"
       color="rgba(15, 15, 15, 0.9)"
       borderRadius={50}
       top="0px"
@@ -115,8 +115,8 @@ function IconContainer({
         <motion.div
           className="flex items-center justify-center text-white"
           style={{
-            width: useTransform(width, (w) => w * 0.5),
-            height: useTransform(height, (h) => h * 0.5),
+            width: useTransform(width, (w) => w * 0.4),
+            height: useTransform(height, (h) => h * 0.4),
           }}
         >
           {icon}

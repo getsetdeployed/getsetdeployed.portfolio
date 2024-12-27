@@ -1,9 +1,15 @@
-import React, { useState, useEffect, useRef, ReactNode } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+  CSSProperties,
+} from "react";
 
 interface ContainerProps {
   children: ReactNode;
-  width: string;
-  height: string;
+  width: string | number;
+  height: string | number;
   color?: string;
   borderRadius?: string;
   blur?: boolean;
@@ -17,18 +23,19 @@ const Container: React.FC<ContainerProps> = ({
   borderRadius = "0px",
   blur = false,
 }) => {
-  const [cursorX, setCursorX] = useState(0);
-  const [cursorY, setCursorY] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [cursorX, setCursorX] = useState<number>(0);
+  const [cursorY, setCursorY] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = containerRef.current;
+    if (!currentRef) return;
+
     const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setCursorX(e.clientX - rect.left);
-        setCursorY(e.clientY - rect.top);
-      }
+      const rect = currentRef.getBoundingClientRect();
+      setCursorX(e.clientX - rect.left);
+      setCursorY(e.clientY - rect.top);
     };
 
     const handleMouseEnter = () => {
@@ -39,27 +46,22 @@ const Container: React.FC<ContainerProps> = ({
       setIsHovered(false);
     };
 
-    const currentRef = containerRef.current;
-    if (currentRef) {
-      currentRef.addEventListener("mousemove", handleMouseMove);
-      currentRef.addEventListener("mouseenter", handleMouseEnter);
-      currentRef.addEventListener("mouseleave", handleMouseLeave);
-    }
+    currentRef.addEventListener("mousemove", handleMouseMove);
+    currentRef.addEventListener("mouseenter", handleMouseEnter);
+    currentRef.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      if (currentRef) {
-        currentRef.removeEventListener("mousemove", handleMouseMove);
-        currentRef.removeEventListener("mouseenter", handleMouseEnter);
-        currentRef.removeEventListener("mouseleave", handleMouseLeave);
-      }
+      currentRef.removeEventListener("mousemove", handleMouseMove);
+      currentRef.removeEventListener("mouseenter", handleMouseEnter);
+      currentRef.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
-  const containerStyle = {
+  const containerStyle: CSSProperties = {
     position: "relative",
-    width: width,
-    height: height,
-    borderRadius: borderRadius,
+    width,
+    height,
+    borderRadius,
     backgroundColor: color,
     overflow: "visible",
     backdropFilter: blur ? "blur(12px)" : "none",
@@ -67,13 +69,13 @@ const Container: React.FC<ContainerProps> = ({
     border: "1px solid rgba(255,255,255,0.05)",
   };
 
-  const spotlightStyle = {
+  const spotlightStyle: CSSProperties = {
     position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    borderRadius: borderRadius,
+    borderRadius,
     background: `radial-gradient(circle 150px at ${cursorX}px ${cursorY}px, rgba(255,255,255,0.1), transparent)`,
     opacity: isHovered ? 1 : 0,
     transition: "opacity 0.3s ease",
