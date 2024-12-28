@@ -9,7 +9,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import Link from "next/link";
-import Container from "../container/Container";
+import NavContainer from "../container/navbarcontainer";
 
 type NavItem = {
   title: string;
@@ -26,7 +26,7 @@ const FloatingDock: React.FC<FloatingDockProps> = ({ items, className }) => {
   let mouseX = useMotionValue(Infinity);
 
   return (
-    <Container
+    <NavContainer
       width="auto"
       height="80px"
       color="rgba(15, 15, 15, 0.9)"
@@ -47,7 +47,7 @@ const FloatingDock: React.FC<FloatingDockProps> = ({ items, className }) => {
           <IconContainer mouseX={mouseX} key={item.title} {...item} />
         ))}
       </motion.div>
-    </Container>
+    </NavContainer>
   );
 };
 
