@@ -1,6 +1,5 @@
 import {
   SiDjango,
-  SiFramer,
   SiNextdotjs,
   SiPostgresql,
   SiReact,
@@ -17,7 +16,6 @@ export type ProjectProps = {
   technologies: IconType[];
   techNames: string[];
   techLinks: string[];
-  github: string;
   demo: string;
   image: string;
   available: boolean;
@@ -50,7 +48,6 @@ export const projects = [
       "https://tailwindcss.com/",
       "https://www.framer.com/motion/",
     ],
-    github: "https://github.com/karthikmudunuri/eldoraui",
     demo: "https://www.eldoraui.site/",
     image: "/projects/eldoraui.png",
     available: true,
@@ -66,7 +63,6 @@ export const projects = [
       "https://www.typescriptlang.org/",
       "https://reactjs.org/",
     ],
-    github: "https://github.com/karthikmudunuri/VRMALL",
     demo: "https://vrmalldemo.netlify.app/",
     image: "/projects/vrmall.png",
     available: true,
