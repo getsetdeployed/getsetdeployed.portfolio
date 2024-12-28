@@ -1,91 +1,135 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  ReactNode,
-  CSSProperties,
-} from "react";
+import React, { useState, useRef } from "react";
+import Grain from "../overlay/Grain";
+import "./container.css";
+import { useEventListener } from "usehooks-ts";
 
-interface ContainerProps {
-  children: ReactNode;
-  width: string | number;
-  height: string | number;
-  color?: string;
-  borderRadius?: string;
+type CustomCSSProperties = React.CSSProperties & {
+  "--width"?: string | number;
+  "--height"?: string | number;
+  "--gradient"?: string;
+  "--highlight-color"?: string;
+  "--accent-color"?: string;
+  "--border-radius"?: string | number;
+  "--top"?: string | number;
+  "--left"?: string | number;
+  "--is-hovered"?: number;
+  "--cursor-x"?: string;
+  "--cursor-y"?: string;
+  "--angle"?: number;
+};
+
+type ContainerProps = {
+  // size
+  width?: string | number;
+  height?: string | number;
+  borderRadius?: string | number;
+  // position
+  top?: string | number;
+  left?: string | number;
+  // colors
+  color: string;
+  // accent
+  accent?: boolean; // TODO: !!
+  accentColor?: string;
+  accentOffsetX?: string | number; // TODO: !!
+  accentOffsetY?: string | number; // TODO: !!
+  // blur
   blur?: boolean;
-}
+  // border
+  border?: boolean; // TODO: !!
+  borderColor?: string; // TODO: !!
+  // border-highlight
+  borderHighlight?: boolean; // TODO: !!
+  borderHighlightColor?: string; // TODO: !!
+  // spotlight
+  spotlight?: boolean; // TODO: !!
+  spotlightColor?: string;
+  // gradient
+  angle?: number;
+  // grain
+  grain?: boolean; // TODO: !!
+  baseFrequency?: string;
+  numOctaves?: number;
+  // other
+  children: React.ReactNode;
+};
 
 const Container: React.FC<ContainerProps> = ({
-  children,
   width,
   height,
-  color = "transparent",
-  borderRadius = "0px",
-  blur = false,
+  top = 0,
+  left = 0,
+  color,
+  spotlightColor = "rgba(255, 255, 255, 0.25)", // #ffffff just a bit of white
+  accentColor = "rgba(255, 255, 255, 1.0)", // #c673ff Amethyst
+  blur = true,
+  borderRadius = 0,
+  angle,
+  baseFrequency = "7",
+  numOctaves = 3,
+  children,
 }) => {
-  const [cursorX, setCursorX] = useState<number>(0);
-  const [cursorY, setCursorY] = useState<number>(0);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const currentRef = containerRef.current;
-    if (!currentRef) return;
+  useEventListener("mousemove", (e) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (rect) {
+      const { left: containerLeft, top: containerTop } = rect;
+      const x = e.clientX - containerLeft;
+      const y = e.clientY - containerTop;
+      setCursorPosition({ x, y });
+    }
+  });
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = currentRef.getBoundingClientRect();
-      setCursorX(e.clientX - rect.left);
-      setCursorY(e.clientY - rect.top);
-    };
-
-    const handleMouseEnter = () => {
-      setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovered(false);
-    };
-
-    currentRef.addEventListener("mousemove", handleMouseMove);
-    currentRef.addEventListener("mouseenter", handleMouseEnter);
-    currentRef.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      currentRef.removeEventListener("mousemove", handleMouseMove);
-      currentRef.removeEventListener("mouseenter", handleMouseEnter);
-      currentRef.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
-
-  const containerStyle: CSSProperties = {
-    position: "relative",
-    width,
-    height,
-    borderRadius,
-    backgroundColor: color,
-    overflow: "visible",
-    backdropFilter: blur ? "blur(12px)" : "none",
-    boxShadow: "0 8px 32px 0 rgba(0,0,0,0.2)",
-    border: "1px solid rgba(255,255,255,0.05)",
+  const getGradientStyle = () => {
+    if (typeof angle === "number" && !isNaN(angle)) {
+      return `linear-gradient(${angle}deg, rgba(255, 255, 255, 0) 0%, ${color} 100%)`;
+    }
+    return color;
   };
 
-  const spotlightStyle: CSSProperties = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    borderRadius,
-    background: `radial-gradient(circle 150px at ${cursorX}px ${cursorY}px, rgba(255,255,255,0.1), transparent)`,
-    opacity: isHovered ? 1 : 0,
-    transition: "opacity 0.3s ease",
-    pointerEvents: "none",
-  };
+  const blurClasses = blur ? "backdrop-blur-[64px]" : "";
 
   return (
-    <div ref={containerRef} style={containerStyle}>
-      <div style={spotlightStyle} />
+    <div
+      className={`container ${blurClasses}`}
+      style={
+        {
+          "--angle": typeof angle === "number" ? `${angle}deg` : angle,
+          "--width": typeof width === "number" ? `${width}px` : width,
+          "--height": typeof height === "number" ? `${height}px` : height,
+          "--gradient": getGradientStyle(),
+          "--spotlight-color": spotlightColor,
+          "--accent-color": accentColor,
+          "--border-radius": `${borderRadius}px`,
+          "--top": `${top}px`,
+          "--left": `${left}px`,
+          "--is-hovered": isHovered ? 0.5 : 0, // TODO: Clean this up later. Not Important right now.
+          "--cursor-x": `${cursorPosition.x}px`,
+          "--cursor-y": `${cursorPosition.y}px`,
+        } as unknown as CustomCSSProperties
+      }
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
+      ref={containerRef}
+    >
       {children}
+      <div className="accent" />
+      <div className="spotlight" />
+      <div className="border" />
+      <div className="border-highlight" />
+      <div className="grain">
+        <Grain
+          baseFrequency={baseFrequency}
+          numOctaves={numOctaves}
+          w={width}
+          h={height}
+        />
+      </div>
     </div>
   );
 };

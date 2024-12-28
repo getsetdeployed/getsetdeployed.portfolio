@@ -1,3 +1,4 @@
+// FloatingDock.tsx
 import React, { useRef, useState } from "react";
 import {
   motion,
@@ -29,11 +30,11 @@ const FloatingDock: React.FC<FloatingDockProps> = ({ items, className }) => {
       width="auto"
       height="80px"
       color="rgba(15, 15, 15, 0.9)"
-      borderRadius={50}
+      borderRadius="50px"
       top="0px"
       left="0px"
       angle={0}
-      blur={false} // Remove blur effect
+      blur={false}
       spotlightColor="rgba(255, 255, 255, 0.4)"
       accentColor="rgba(255, 255, 255, 0.8)"
     >
@@ -72,6 +73,7 @@ function IconContainer({
     stiffness: 150,
     damping: 12,
   });
+
   let height = useSpring(heightTransform, {
     mass: 0.1,
     stiffness: 150,
@@ -106,7 +108,7 @@ function IconContainer({
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
               className="px-3 py-1 whitespace-pre rounded-md bg-white text-black font-medium absolute left-1/2 -translate-x-1/2 -top-10 w-fit text-sm"
-              style={{ zIndex: 20 }} // Ensure the name appears above the parent div
+              style={{ zIndex: 20 }}
             >
               {title}
             </motion.div>
