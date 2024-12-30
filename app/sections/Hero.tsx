@@ -3,97 +3,94 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 
 const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    id: 1,
+    title: "PaddleLift",
+    link: "https://paddlelift.com/",
+    thumbnail: "/projects/paddlelift.png",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    id: 2,
+    title: "Manavta Nursery",
+    link: "https://manavtanursery.org/",
+    thumbnail: "/projects/manavta.png",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-  },
-
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    id: 3,
+    title: "Emerging India",
+    link: "https://emergingindia.org/",
+    thumbnail: "/projects/emerging.png",
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    id: 4,
+    title: "PaddleLift",
+    link: "https://paddlelift.com/",
+    thumbnail: "/projects/paddlelift.png",
   },
   {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-  },
-
-  {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    id: 5,
+    title: "Manavta Nursery",
+    link: "https://manavtanursery.org/",
+    thumbnail: "/projects/manavta.png",
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    id: 6,
+    title: "Emerging India",
+    link: "https://emergingindia.org/",
+    thumbnail: "/projects/emerging.png",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+    id: 7,
+    title: "PaddleLift",
+    link: "https://paddlelift.com/",
+    thumbnail: "/projects/paddlelift.png",
   },
   {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+    id: 8,
+    title: "Manavta Nursery",
+    link: "https://manavtanursery.org/",
+    thumbnail: "/projects/manavta.png",
   },
   {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
-  },
-
-  {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    id: 9,
+    title: "Emerging India",
+    link: "https://emergingindia.org/",
+    thumbnail: "/projects/emerging.png",
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+    id: 10,
+    title: "PaddleLift",
+    link: "https://paddlelift.com/",
+    thumbnail: "/projects/paddlelift.png",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+    id: 11,
+    title: "Manavta Nursery",
+    link: "https://manavtanursery.org/",
+    thumbnail: "/projects/manavta.png",
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    id: 12,
+    title: "PaddleLift",
+    link: "https://paddlelift.com/",
+    thumbnail: "/projects/paddlelift.png",
+  },
+  {
+    id: 13,
+    title: "Manavta Nursery",
+    link: "https://manavtanursery.org/",
+    thumbnail: "/projects/manavta.png",
+  },
+  {
+    id: 14,
+    title: "Emerging India",
+    link: "https://emergingindia.org/",
+    thumbnail: "/projects/emerging.png",
+  },
+  {
+    id: 15,
+    title: "PaddleLift",
+    link: "https://paddlelift.com/",
+    thumbnail: "/projects/paddlelift.png",
   },
 ];
 

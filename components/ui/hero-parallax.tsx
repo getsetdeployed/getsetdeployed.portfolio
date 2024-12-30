@@ -14,6 +14,7 @@ export const HeroParallax = ({
   products,
 }: {
   products: {
+    id: number;
     title: string;
     link: string;
     thumbnail: string;
@@ -74,7 +75,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -83,7 +84,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -92,7 +93,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -121,6 +122,7 @@ export const ProductCard = ({
   translate,
 }: {
   product: {
+    id: number;
     title: string;
     link: string;
     thumbnail: string;
@@ -135,7 +137,7 @@ export const ProductCard = ({
       whileHover={{
         y: -20,
       }}
-      key={product.title}
+      key={product.id}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
       <Link
