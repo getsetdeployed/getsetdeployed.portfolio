@@ -9,7 +9,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import Link from "next/link";
-import NavContainer from "../container/navbarcontainer";
+import NavContainer from "../container/Navbarcontainer";
 
 type NavItem = {
   title: string;

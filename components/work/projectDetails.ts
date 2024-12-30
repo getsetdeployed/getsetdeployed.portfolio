@@ -26,7 +26,7 @@ export const projects = [
     id: 0,
     name: "PaddleLift",
     description:
-      "open-source animated components built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
+      "Paddlelift Private Limited, established in 2020, is a premier recruitment and HR solutions provider, connecting global businesses with top talent through innovative and personalized services.",
     technologies: [
       SiTypescript,
       SiNextdotjs,
@@ -65,6 +65,22 @@ export const projects = [
     ],
     demo: "https://vrmalldemo.netlify.app/",
     image: "/projects/vrmall.png",
+    available: true,
+  },
+  {
+    id: 2,
+    name: "Django Blog",
+    description:
+      "A blog website built with Django, PostgreSQL, and Tailwind CSS.",
+    technologies: [SiDjango, SiPostgresql, SiTailwindcss],
+    techNames: ["Django", "PostgreSQL", "Tailwind CSS"],
+    techLinks: [
+      "https://www.djangoproject.com/",
+      "https://www.postgresql.org/",
+      "https://tailwindcss.com/",
+    ],
+    demo: "https://djangoblogdemo.netlify.app/",
+    image: "/projects/eldoraui.png",
     available: true,
   },
 ];

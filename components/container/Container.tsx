@@ -1,7 +1,10 @@
+"use client";
+
 import React, { useState, useRef } from "react";
 import Grain from "../overlay/Grain";
-import "./container.css";
 import { useEventListener } from "usehooks-ts";
+import styles from "./Container.module.css";
+import { v4 as uuidv4 } from "uuid";
 
 type CustomCSSProperties = React.CSSProperties & {
   "--width"?: string | number;
@@ -19,38 +22,19 @@ type CustomCSSProperties = React.CSSProperties & {
 };
 
 type ContainerProps = {
-  // size
   width?: string | number;
   height?: string | number;
   borderRadius?: string | number;
-  // position
   top?: string | number;
   left?: string | number;
-  // colors
   color: string;
-  // accent
-  accent?: boolean; // TODO: !!
-  accentColor?: string;
-  accentOffsetX?: string | number; // TODO: !!
-  accentOffsetY?: string | number; // TODO: !!
-  // blur
-  blur?: boolean;
-  // border
-  border?: boolean; // TODO: !!
-  borderColor?: string; // TODO: !!
-  // border-highlight
-  borderHighlight?: boolean; // TODO: !!
-  borderHighlightColor?: string; // TODO: !!
-  // spotlight
-  spotlight?: boolean; // TODO: !!
   spotlightColor?: string;
-  // gradient
+  accentColor?: string;
+  blur?: boolean;
   angle?: number;
-  // grain
-  grain?: boolean; // TODO: !!
   baseFrequency?: string;
   numOctaves?: number;
-  // other
+  grain?: boolean; // Add the grain property
   children: React.ReactNode;
 };
 
@@ -60,13 +44,14 @@ const Container: React.FC<ContainerProps> = ({
   top = 0,
   left = 0,
   color,
-  spotlightColor = "rgba(255, 255, 255, 0.25)", // #ffffff just a bit of white
-  accentColor = "rgba(255, 255, 255, 1.0)", // #c673ff Amethyst
+  spotlightColor = "rgba(255, 255, 255, 0.25)",
+  accentColor = "rgba(255, 255, 255, 1.0)",
   blur = true,
   borderRadius = 0,
   angle,
   baseFrequency = "7",
   numOctaves = 3,
+  grain = false, // Default to false
   children,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -91,10 +76,12 @@ const Container: React.FC<ContainerProps> = ({
   };
 
   const blurClasses = blur ? "backdrop-blur-[64px]" : "";
+  const uniqueId = uuidv4();
 
   return (
     <div
-      className={`container ${blurClasses}`}
+      id={`canvas-container-${uniqueId}`}
+      className={`${styles.container} ${blurClasses}`}
       style={
         {
           "--angle": typeof angle === "number" ? `${angle}deg` : angle,
@@ -106,7 +93,7 @@ const Container: React.FC<ContainerProps> = ({
           "--border-radius": `${borderRadius}px`,
           "--top": `${top}px`,
           "--left": `${left}px`,
-          "--is-hovered": isHovered ? 0.5 : 0, // TODO: Clean this up later. Not Important right now.
+          "--is-hovered": isHovered ? 0.5 : 0,
           "--cursor-x": `${cursorPosition.x}px`,
           "--cursor-y": `${cursorPosition.y}px`,
         } as unknown as CustomCSSProperties
@@ -118,18 +105,20 @@ const Container: React.FC<ContainerProps> = ({
       ref={containerRef}
     >
       {children}
-      <div className="accent" />
-      <div className="spotlight" />
-      <div className="border" />
-      <div className="border-highlight" />
-      <div className="grain">
-        <Grain
-          baseFrequency={baseFrequency}
-          numOctaves={numOctaves}
-          w={width}
-          h={height}
-        />
-      </div>
+      <div className={styles.accent} />
+      <div className={styles.spotlight} />
+      <div className={styles.border} />
+      <div className={styles.borderHighlight} />
+      {grain && (
+        <div className={styles.grain}>
+          <Grain
+            baseFrequency={baseFrequency}
+            numOctaves={numOctaves}
+            w={width}
+            h={height}
+          />
+        </div>
+      )}
     </div>
   );
 };

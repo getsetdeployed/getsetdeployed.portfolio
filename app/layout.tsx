@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
+
 import { Inter } from "next/font/google";
 
 const syne = Inter({
@@ -11,11 +12,11 @@ const syne = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://getsetdeploy.com/"),
-  title: "Portfolio template - Eldora UI",
+  title: "GetSetDeployed",
   description:
-    "Eldora UI is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
+    "We are a group of developers that helps you in growing up your business. We are here to help you in growing up your business.",
   generator: "Next.js",
-  applicationName: "Portfolio template",
+  applicationName: "GetSetDeployed",
   keywords: [
     "Portfolio Webdeveloper",
     "React",
@@ -36,12 +37,11 @@ export const metadata: Metadata = {
     "software developer portfolio",
     "frontend engineer portfolio",
   ],
-  colorScheme: "dark",
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio template - Eldora UI",
+    title: "GetSetDeployed",
     description:
-      "Portfolio template - Eldora UI is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
+      "We are a group of developers that helps you in growing up your business. We are here to help you in growing up your business.",
     creator: "@bewithsnehasish",
     creatorId: "0000000000",
   },
