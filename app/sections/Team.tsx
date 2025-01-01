@@ -10,18 +10,17 @@ const team = [
     name: "Snehasish Mandal",
     title: "Chief Experience Architect & Frontend Innovation Lead",
     desc: "A trailblazing professional based in India, specializing in digital experience design and frontend development. I create immersive, intuitive user interfaces with a holistic approach that blends functionality and aesthetic brilliance.",
-    linkedin: "javascript:void(0)",
-    twitter: "javascript:void(0)",
-    github: "javascript:void(0)",
+    linkedin: "https://www.linkedin.com/in/snehasish-mandal-/",
+    twitter: "https://x.com/bewithsnehasish",
+    github: "https://github.com/bewithsnehasish",
   },
   {
     avatar: "/profilepic/mayank.png",
     name: "Mayank Gupta",
     title: "Backend Innovation Architect & Web Services Director",
     desc: "A seasoned professional specializing in backend development and Web services management. I architect robust, scalable solutions that drive business success, ensuring seamless integration and optimal performance for reliable and secure web services.",
-    linkedin: "javascript:void(0)",
-    twitter: "javascript:void(0)",
-    github: "javascript:void(0)",
+    linkedin: "https://www.linkedin.com/in/mayankkumargupta1/",
+    github: "https://github.com/mayankkumargupta1",
   },
 ];
 
@@ -70,18 +69,21 @@ const Team = () => {
                     <Link
                       href={item.twitter}
                       className="duration-150 hover:text-gray-500"
+                      target="_blank"
                     >
                       <FaTwitter className="w-5 h-5" />
                     </Link>
                     <Link
                       href={item.github}
                       className="duration-150 hover:text-gray-500"
+                      target="_blank"
                     >
                       <FaGithub className="w-5 h-5" />
                     </Link>
                     <Link
                       href={item.linkedin}
                       className="duration-150 hover:text-gray-500"
+                      target="_blank"
                     >
                       <FaLinkedin className="w-5 h-5" />
                     </Link>
