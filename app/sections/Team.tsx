@@ -7,18 +7,18 @@ import AnimatedTitle from "../animations/AnimatedTitle";
 const team = [
   {
     avatar: "/profilepic/snehasish.png",
-    name: "Martiana dialan",
-    title: "Frontend Devloper | Product designer",
-    desc: "Frontend Designer & Developer with 5 years of professional experience based in London, UK. We passionatly create beautiful and functional user experiences.",
+    name: "Snehasish Mandal",
+    title: "Chief Experience Architect & Frontend Innovation Lead",
+    desc: "A trailblazing professional based in India, specializing in digital experience design and frontend development. I create immersive, intuitive user interfaces with a holistic approach that blends functionality and aesthetic brilliance.",
     linkedin: "javascript:void(0)",
     twitter: "javascript:void(0)",
     github: "javascript:void(0)",
   },
   {
-    avatar: "",
-    name: "Micheal colorand",
-    title: "Software engineer",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy",
+    avatar: "/profilepic/mayank.png",
+    name: "Mayank Gupta",
+    title: "Backend Innovation Architect & Web Services Director",
+    desc: "A seasoned professional specializing in backend development and Web services management. I architect robust, scalable solutions that drive business success, ensuring seamless integration and optimal performance for reliable and secure web services.",
     linkedin: "javascript:void(0)",
     twitter: "javascript:void(0)",
     github: "javascript:void(0)",
@@ -54,8 +54,8 @@ const Team = () => {
                 <div className="w-full h-60 relative">
                   <Image
                     src={item.avatar}
-                    layout="fill"
-                    objectFit="cover"
+                    style={{ objectFit: "cover" }}
+                    fill
                     className="rounded-xl"
                     alt={item.name}
                   />
