@@ -66,27 +66,33 @@ const Team = () => {
                   <p className="text-indigo-400">{item.title}</p>
                   <p className="text-gray-300 mt-2">{item.desc}</p>
                   <div className="mt-3 flex gap-4 text-gray-400">
-                    <Link
-                      href={item.twitter}
-                      className="duration-150 hover:text-gray-500"
-                      target="_blank"
-                    >
-                      <FaTwitter className="w-5 h-5" />
-                    </Link>
-                    <Link
-                      href={item.github}
-                      className="duration-150 hover:text-gray-500"
-                      target="_blank"
-                    >
-                      <FaGithub className="w-5 h-5" />
-                    </Link>
-                    <Link
-                      href={item.linkedin}
-                      className="duration-150 hover:text-gray-500"
-                      target="_blank"
-                    >
-                      <FaLinkedin className="w-5 h-5" />
-                    </Link>
+                    {item.twitter && (
+                      <Link
+                        href={item.twitter}
+                        className="duration-150 hover:text-gray-500"
+                        target="_blank"
+                      >
+                        <FaTwitter className="w-5 h-5" />
+                      </Link>
+                    )}
+                    {item.github && (
+                      <Link
+                        href={item.github}
+                        className="duration-150 hover:text-gray-500"
+                        target="_blank"
+                      >
+                        <FaGithub className="w-5 h-5" />
+                      </Link>
+                    )}
+                    {item.linkedin && (
+                      <Link
+                        href={item.linkedin}
+                        className="duration-150 hover:text-gray-500"
+                        target="_blank"
+                      >
+                        <FaLinkedin className="w-5 h-5" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </li>
