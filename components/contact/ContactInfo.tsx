@@ -5,17 +5,17 @@ const ContactInfo = () => {
   const contactDetails = [
     {
       icon: <MapPin className="w-6 h-6 text-[#e4ded7]" />,
-      title: "123 Innovation Drive",
-      subtitle: "San Francisco, CA 94107",
+      title: "Kolkata, West Bengal",
+      subtitle: "India",
     },
     {
       icon: <Phone className="w-6 h-6 text-[#e4ded7]" />,
-      title: "+1 (555) 123-4567",
+      title: "+91 70633 18897",
       subtitle: "Mon-Fri 9am-6pm",
     },
     {
       icon: <Mail className="w-6 h-6 text-[#e4ded7]" />,
-      title: "hello@company.com",
+      title: "mail@getsetdeployed.com",
       subtitle: "Get in touch via email",
     },
   ];

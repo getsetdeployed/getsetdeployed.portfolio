@@ -105,10 +105,10 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold text-white">
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0 ">
+      <h1 className="text-2xl md:text-8xl font-bold text-white">
         WE ARE <br />{" "}
-        <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-[#ff5757] to-[#8c52ff] bg-clip-text text-transparent">
           GetSetDeployed
         </span>{" "}
       </h1>
@@ -147,6 +147,7 @@ export const ProductCard = ({
       <Link
         href={product.link}
         className="block group-hover/product:shadow-2xl"
+        target="_blank"
       >
         <Image
           src={product.thumbnail}

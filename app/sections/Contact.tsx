@@ -32,9 +32,9 @@ const Contact = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-20 pt-8 border-t border-white/[0.05]">
+        <div className="mt-20 pb-20 pt-8 border-t border-white/[0.05]">
           <p className="text-center text-gray-400">
-            ©2024 Your Company. All rights reserved.
+            ©2024 GetSetDeployed. All rights reserved.
           </p>
         </div>
       </div>

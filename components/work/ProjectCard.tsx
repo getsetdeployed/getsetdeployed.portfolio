@@ -80,7 +80,7 @@ const ProjectCard = ({
           <AnimatedTitle
             text={name}
             className={
-              "max-w-[90%] text-[40px] leading-none text-white md:text-[44px] md:leading-none lg:max-w-[450px] lg:text-[48px] lg:leading-none"
+              "max-w-[90%] text-[40px] leading-none text-white md:text-[44px] md:leading-none lg:max-w-[450px] lg:text-[48px] lg:leading-none font-bold"
             }
             wordSpace={"mr-[0.25em]"}
             charSpace={"-mr-[0.01em]"}
@@ -88,7 +88,7 @@ const ProjectCard = ({
           <AnimatedBody
             text={description}
             className={
-              "mt-4 w-[90%] max-w-[457px] text-[16px] font-semibold text-[#95979D] "
+              "mt-4 w-[90%] max-w-[457px] text-[18px] font-semibold text-[#95979D] "
             }
           />
           <div className="mt-9 mb-9 grid grid-cols-5 gap-5 col-start-1 col-end-2">
