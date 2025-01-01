@@ -10,6 +10,7 @@ import Contact from "./sections/Contact";
 import { useEffect, useState } from "react";
 import { useEventListener } from "usehooks-ts";
 import useBlobity from "@/components/blobity/useBlobity";
+import "./globals.css";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);

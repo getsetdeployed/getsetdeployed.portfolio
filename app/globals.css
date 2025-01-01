@@ -11,3 +11,28 @@ body {
     --radius: 0.5rem;
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0E1016;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e4ded7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d0c9c2; 
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #e4ded7 #0E1016; 
+}
+
