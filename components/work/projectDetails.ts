@@ -7,7 +7,6 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
-  SiWebgl,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -58,7 +57,7 @@ export const projects = [
     id: 1,
     name: "Manavta Nursery",
     description:
-      "Devloped a Marketplace for selling and buying products of Nursery.",
+      "Developed a comprehensive marketplace for buying and selling nursery products. Features include robust login/logout systems, order tracking, delivery date management, and more.",
     technologies: [SiDjango, SiReact, SiTypescript, SiTailwindcss],
     techNames: ["Django", "React Js", "Typescript", "Tailwind CSS"],
     techLinks: [
@@ -75,7 +74,7 @@ export const projects = [
     id: 2,
     name: "Emerging India",
     description:
-      "It is a Website for NGO which is working for the betterment of the society.",
+      "Developed a comprehensive website for an NGO working towards societal betterment. Features include a donation system, automated certificate generation, and payment gateway integration.",
     technologies: [
       SiDjango,
       SiPostgresql,

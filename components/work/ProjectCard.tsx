@@ -7,6 +7,8 @@ import React from "react";
 import { BsLink45Deg } from "react-icons/bs";
 import AnimatedTitle from "@/app/animations/AnimatedTitle";
 import AnimatedBody from "@/app/animations/AnimatedBody";
+import "./project.css";
+
 const ProjectCard = ({
   id,
   name,
@@ -20,7 +22,7 @@ const ProjectCard = ({
 }: ProjectProps) => {
   return (
     <motion.div
-      className={`relative bg-cover bg-no-repeat bg-center z-10 h-[550px] w-full items-stretch justify-center py-0 sm:h-[700px] sm:w-[100%] md:h-[650px] md:w-[100%] lg:h-[500px]`}
+      className={`relative bg-cover bg-no-repeat bg-center z-10 h-[550px] w-full items-stretch justify-center py-0 sm:h-[700px] sm:w-[100%] md:h-[650px] md:w-[100%] lg:h-[500px] hover:tech-links-hidden`}
       initial="initial"
       animate="animate"
     >
@@ -56,7 +58,7 @@ const ProjectCard = ({
                 href={demo}
                 target="_blank"
                 aria-label="Open Live Demo"
-                className=" w-[43px] rounded-full bg-white p-3 md:p-5 text-[20px] md:w-[65px] md:text-[24px] lg:w-[65px] lg:text-[28px]"
+                className="w-[43px] rounded-full bg-white p-3 md:p-5 text-[20px] md:w-[65px] md:text-[24px] lg:w-[65px] lg:text-[28px]"
                 data-blobity
                 data-blobity-radius="35"
                 data-blobity-offset-x="4"
@@ -80,7 +82,7 @@ const ProjectCard = ({
           <AnimatedTitle
             text={name}
             className={
-              "max-w-[90%] text-[40px] leading-none text-white md:text-[44px] md:leading-none lg:max-w-[450px] lg:text-[48px] lg:leading-none font-bold"
+              "max-w-[90%] text-[40px] leading-none text-white font-bold md:text-[44px] md:leading-none lg:max-w-[450px] lg:text-[48px] lg:leading-none "
             }
             wordSpace={"mr-[0.25em]"}
             charSpace={"-mr-[0.01em]"}
@@ -88,10 +90,10 @@ const ProjectCard = ({
           <AnimatedBody
             text={description}
             className={
-              "mt-4 w-[90%] max-w-[457px] text-[18px] font-semibold text-[#95979D] "
+              "mt-4 w-[90%] max-w-[457px] text-[16px] font-semibold text-[#95979D] "
             }
           />
-          <div className="mt-9 mb-9 grid grid-cols-5 gap-5 col-start-1 col-end-2">
+          <div className="mt-9 mb-9 grid grid-cols-5 gap-5 col-start-1 col-end-2 tech-links">
             {technologies.map((IconComponent, id) => (
               <div key={id} className={"relative"}>
                 <Link

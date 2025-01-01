@@ -39,8 +39,9 @@ const Team = () => {
           />
 
           <p className="text-gray-300 mt-3">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy.
+            Our team consists of skilled developers and creative designers who
+            are passionate about building innovative solutions. Together, we
+            deliver high-quality products that exceed expectations.
           </p>
         </div>
         <div className="mt-12">

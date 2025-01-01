@@ -46,6 +46,15 @@ export const metadata: Metadata = {
     creatorId: "0000000000",
   },
   category: "technology",
+  icons: {
+    icon: "/favicon_io/favicon.ico",
+    shortcut: "/favicon_io/favicon.ico",
+    apple: "/favicon_io/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/favicon_io/apple-touch-icon.png",
+    },
+  },
 };
 
 type RootLayoutProps = {

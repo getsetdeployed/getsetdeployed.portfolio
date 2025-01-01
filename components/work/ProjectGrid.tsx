@@ -11,12 +11,10 @@ const ProjectGrid = () => {
           {" "}
           {/* Ensure the container is left-aligned */}
           <AnimatedTitle
-            text={"CHECK OUT SOME OF OUR WORK!"}
-            className={
-              "mb-10 text-left text-[40px] font-bold leading-[0.9em] tracking-tighter text-[#e4ded7] sm:text-[45px] md:mb-16 md:text-[60px] lg:text-[80px]"
-            }
-            wordSpace={"mr-[14px]"}
-            charSpace={"mr-[0.001em]"}
+            text="CHECK OUT SOME OF OUR PROJECTS!"
+            className="mb-16 text-left text-5xl font-bold tracking-tight text-[#e4ded7] sm:text-6xl lg:text-7xl"
+            wordSpace="mr-[14px]"
+            charSpace="mr-[0.001em]"
           />
         </div>
       </div>
