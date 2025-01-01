@@ -104,7 +104,6 @@ const PreLoader: React.FC = () => {
           <span>
             <Logo width={200} height={200} />
           </span>
-          GetSetDeployed{" "}
         </span>
         <div className="sub hidden"></div>
       </div>
