@@ -6,40 +6,18 @@ import AnimatedTitle from "../animations/AnimatedTitle";
 
 const team = [
   {
-    avatar:
-      "https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+    avatar: "/profilepic/snehasish.png",
     name: "Martiana dialan",
-    title: "Product designer",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy",
+    title: "Frontend Devloper | Product designer",
+    desc: "Frontend Designer & Developer with 5 years of professional experience based in London, UK. We passionatly create beautiful and functional user experiences.",
     linkedin: "javascript:void(0)",
     twitter: "javascript:void(0)",
     github: "javascript:void(0)",
   },
   {
-    avatar:
-      "https://images.unsplash.com/photo-1623605931891-d5b95ee98459?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+    avatar: "",
     name: "Micheal colorand",
     title: "Software engineer",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy",
-    linkedin: "javascript:void(0)",
-    twitter: "javascript:void(0)",
-    github: "javascript:void(0)",
-  },
-  {
-    avatar:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    name: "Daniel martin",
-    title: "Product designer",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy",
-    linkedin: "javascript:void(0)",
-    twitter: "javascript:void(0)",
-    github: "javascript:void(0)",
-  },
-  {
-    avatar:
-      "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
-    name: "Vicky tanson",
-    title: "Product manager",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry. Lorem Ipsum has been the industry's standard dummy",
     linkedin: "javascript:void(0)",
     twitter: "javascript:void(0)",
