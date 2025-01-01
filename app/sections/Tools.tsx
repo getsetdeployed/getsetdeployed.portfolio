@@ -30,6 +30,7 @@ import IconCloud from "@/components/ui/icon-cloud";
 
 const Tools = () => {
   const iconSlugs = [
+    "archlinux",
     "typescript",
     "gunicorn",
     "fastapi",
