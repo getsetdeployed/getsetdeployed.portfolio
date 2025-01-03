@@ -10,7 +10,7 @@ const ContactInfo = () => {
     },
     {
       icon: <Phone className="w-6 h-6 text-[#e4ded7]" />,
-      title: "+91 70633 18897",
+      title: "+91 98756 09901",
       subtitle: "Mon-Fri 9am-6pm",
     },
     {
