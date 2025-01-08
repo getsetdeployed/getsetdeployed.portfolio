@@ -22,6 +22,14 @@ const team = [
     linkedin: "https://www.linkedin.com/in/mayankkumargupta1/",
     github: "https://github.com/mayankkumargupta1",
   },
+  {
+    avatar: "/profilepic/Rajat.png",
+    name: "Rajat Singh Tomar",
+    title: "Product Quality Lead & Client Relations Manager",
+    desc: "A seasoned professional specializing in Web development, manage product quality & client relations. I ensure the delivery of high-performance, secure, and user-centric solutions while maintaining a strong focus on product excellence and customer satisfaction.",
+    linkedin: "https://www.linkedin.com/in/rajat-singh-tomar-65727a185/",
+    github: "https://github.com/rajat290",
+  },
 ];
 
 const Team = () => {
