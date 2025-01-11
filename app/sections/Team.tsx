@@ -6,6 +6,14 @@ import AnimatedTitle from "../animations/AnimatedTitle";
 
 const team = [
   {
+    avatar: "/profilepic/mayank.png",
+    name: "Mayank Kumar Gupta",
+    title: "Backend Innovation Lead & Web Services Manager",
+    desc: "An experienced professional specializing in backend development and managing web services. I build strong, scalable solutions that ensure smooth performance and security for web services",
+    linkedin: "https://www.linkedin.com/in/mayankkumargupta1/",
+    github: "https://github.com/mayankkumargupta1",
+  },
+  {
     avatar: "/profilepic/snehasish.png",
     name: "Snehasish Mandal",
     title: "UI/UX Designer & Frontend Innovation Lead",
@@ -13,14 +21,6 @@ const team = [
     linkedin: "https://www.linkedin.com/in/snehasish-mandal-/",
     twitter: "https://x.com/bewithsnehasish",
     github: "https://github.com/bewithsnehasish",
-  },
-  {
-    avatar: "/profilepic/mayank.png",
-    name: "Mayank Kumar Gupta",
-    title: "Backend Innovation Lead & Web Services Manager",
-    desc: "An experienced professional specializing in backend development and managing web services. I build strong, scalable solutions that ensure smooth performance and security for web services",
-    linkedin: "https://www.linkedin.com/in/mayankkumargupta1/",
-    github: "https://github.com/mayankkumargupta1",
   },
   {
     avatar: "/profilepic/Rajat.png",
