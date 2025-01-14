@@ -38,7 +38,7 @@ const Team = () => {
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <div className="max-w-3xl">
           <AnimatedTitle
-            text={"MEET OUR TALENT TEAM"}
+            text={"MEET OUR TALENTED TEAM"}
             className={
               "mb-10 text-left text-[40px] font-bold leading-[0.9em] tracking-tighter text-[#e4ded7] sm:text-[45px] md:mb-16 md:text-[60px] lg:text-[80px]"
             }
