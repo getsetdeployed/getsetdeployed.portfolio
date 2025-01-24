@@ -5,6 +5,7 @@ import { formatDate } from "@/utils/formatDate";
 interface FormData {
   firstName: string;
   lastName: string;
+  phone: string;
   name: string;
   email: string;
   message: string;
@@ -14,6 +15,7 @@ export const useContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
+    phone: "",
     name: "",
     email: "",
     message: "",
@@ -62,7 +64,6 @@ export const useContactForm = () => {
         }),
       );
 
-      const firstLetter = formData.name.charAt(0).toUpperCase();
       const emailTemplate = `
 <div style="max-width: 600px; margin: 0 auto; font-family: 'Arial', sans-serif; background-color: #ffffff; color: #333333; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); overflow: hidden;">
   <!-- Header with Name Initial Circle -->
@@ -147,7 +148,14 @@ export const useContactForm = () => {
 
       console.log("Email sent successfully:", response.data);
       alert("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+        firstName: "",
+        lastName: "",
+        phone: "",
+      });
       setFiles([]); // Clear the files array after successful submission
     } catch (error) {
       if (axios.isAxiosError(error)) {
