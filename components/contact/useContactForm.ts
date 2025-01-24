@@ -3,6 +3,8 @@ import axios from "axios";
 import { formatDate } from "@/utils/formatDate";
 
 interface FormData {
+  firstName: string;
+  lastName: string;
   name: string;
   email: string;
   message: string;
@@ -10,6 +12,8 @@ interface FormData {
 
 export const useContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
+    firstName: "",
+    lastName: "",
     name: "",
     email: "",
     message: "",
