@@ -49,7 +49,7 @@ export const projects = [
       "https://www.djangoproject.com/",
       "https://www.postgresql.org/",
     ],
-    demo: "https://www.eldoraui.site/",
+    demo: "https://www.paddlelift.com",
     image: "/projects/paddlelift.png",
     available: true,
   },
